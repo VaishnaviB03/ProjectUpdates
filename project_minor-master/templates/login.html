@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+</head>
+
+<body>
+
+
+    <form name="LoginForm" action="/login" method="POST">
+        <p>username</p>
+        <input type="text" name="username" placeholder="Enter Username" id="username">
+        <p>password</p>
+        <input type="password" name="password" placeholder="enter password" id="password">
+        <br>
+        <input type="submit" name="" value="Login" id="submitBtn">
+        <p>Not a member? <a href="/signup">Signup</a></p>
+
+    </form>
+    <span id="error"></span> {%for user in info%}
+    <div>{{user}}</div>
+    {%endfor%}
+    <script src="{{url_for('static',filename='/css/app.js')}}" type="text/JavaScript"></script>
+
+
+</body>
+
+</html>
