@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>NEEV</title>
+    <!-- <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap">
+    <link href="js.js">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style1.css')}}">
+    <link rel="stylesheet" href="../static/css/style1.css">
+    <link rel="stylesheet" href="../static/css/products.css">
+
+</head>
+
+<body>
+    <div class="container-fluid main_menu">
+        <div class="row">
+            <div class="col-md-15 col-12 mx-auto">
+                <nav class="navbar navbar-expand-lg ">
+                    <!-- <a class="navbar-brand" href="#" style="font-size: 30px;"> <i class="fas fa-circle-notch"></i> N E E V <i class="fas fa-circle-notch"></i></a> -->
+                    <a class="navbar-brand" href="#" style="font-size: 30px;"> <i class="fab fa-battle-net"></i> N E E V</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span></button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <!-- <a class="nav-link" href="#">Shop<span class="sr-only">(current)</span></a> -->
+                            </li>
+                            <li class="nav-item">
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="team.html" target="_blank">Team</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">cat1</a>
+                                    <a class="dropdown-item" href="#">cat2</a>
+                                    <a class="dropdown-item" href="#">cat3</a>
+                                    <a class="dropdown-item" href="#">cat4</a>
+                                    <a class="dropdown-item" href="#">cat5</a>
+                                    <a class="dropdown-item" href="#">cat6</a>
+                                    <a class="dropdown-item" href="#">cat7</a>
+                                    <a class="dropdown-item" href="#">cat8</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/signup">SignUp</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/login">Login</a>
+                            </li>
+
+
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <!-- <div class="cart-nav">
+            <div class="icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Cart</span>
+            </div>
+            <div class="item-count">0</div>
+        </div> -->
+        <div class="card">
+            <img src="../static/images/headphone.png" alt="">
+            <div class="content">
+                <div class="row">
+                    <div class="details">
+                        <span>Headphone</span>
+                        <p>Premium headphone</p>
+                    </div>
+                    <div class="price">30</div>
+                </div>
+                <div class="buttons">
+                    <button>Buy Now</button>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="../static/images/watch.png" alt="">
+            <div class="content">
+                <div class="row">
+                    <div class="details">
+                        <span>Apple Watch</span>
+                        <p>Premium digital watch</p>
+                    </div>
+                    <div class="price">80</div>
+                </div>
+                <div class="buttons">
+                    <button>Buy Now</button>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="../static/images/watch.png" alt="">
+            <div class="content">
+                <div class="row">
+                    <div class="details">
+                        <span>Apple Airpod</span>
+                        <p>Premium black airpod</p>
+                    </div>
+                    <div class="price">50</div>
+                </div>
+                <div class="buttons">
+                    <button>Buy Now</button>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="../static/images/watch.png" alt="">
+            <div class="content">
+                <div class="row">
+                    <div class="details">
+                        <span>Apple Airpod</span>
+                        <p>Premium black airpod</p>
+                    </div>
+                    <div class="price">50</div>
+                </div>
+                <div class="buttons">
+                    <button>Buy Now</button>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="../static/images/watch.png" alt="">
+            <div class="content">
+                <div class="row">
+                    <div class="details">
+                        <span>Apple Airpod</span>
+                        <p>Premium black airpod</p>
+                    </div>
+                    <div class="price">50</div>
+                </div>
+                <div class="buttons">
+                    <button>Buy Now</button>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="../static/images/watch.png" alt="">
+            <div class="content">
+                <div class="row">
+                    <div class="details">
+                        <span>Apple Airpod</span>
+                        <p>Premium black airpod</p>
+                    </div>
+                    <div class="price">50</div>
+                </div>
+                <div class="buttons">
+                    <button>Buy Now</button>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="../static/images/watch.png" alt="">
+            <div class="content">
+                <div class="row">
+                    <div class="details">
+                        <span>Apple Airpod</span>
+                        <p>Premium black airpod</p>
+                    </div>
+                    <div class="price">50</div>
+                </div>
+                <div class="buttons">
+                    <button>Buy Now</button>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="../static/images/watch.png" alt="">
+            <div class="content">
+                <div class="row">
+                    <div class="details">
+                        <span>Apple Airpod</span>
+                        <p>Premium black airpod</p>
+                    </div>
+                    <div class="price">50</div>
+                </div>
+                <div class="buttons">
+                    <button>Buy Now</button>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="../static/images/watch.png" alt="">
+            <div class="content">
+                <div class="row">
+                    <div class="details">
+                        <span>Apple Airpod</span>
+                        <p>Premium black airpod</p>
+                    </div>
+                    <div class="price">50</div>
+                </div>
+                <div class="buttons">
+                    <button>Buy Now</button>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer-section spad">
+        <div class="container">
+            <div class="newslatter-form">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form action="#">
+                            <input type="text" placeholder="Your email address">
+                            <button type="submit">Subscribe to our newsletter</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-widget">
+                <div class="row">
+
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h4>Customer Care</h4>
+                            <ul>
+                                <li>Search</li>
+                                <li>Privacy Policy</li>
+                                <li>2019 Lookbook</li>
+                                <li>Shipping & Delivery</li>
+                                <li>Gallery</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h4>Our Services</h4>
+                            <ul>
+                                <li>Free Shipping</li>
+                                <li>Free Returnes</li>
+                                <li>Our Franchising</li>
+                                <li>Terms and conditions</li>
+                                <li>Privacy Policy</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h4>Information</h4>
+                            <ul>
+                                <li>Payment methods</li>
+                                <li>Times and shipping costs</li>
+                                <li>Product Returns</li>
+                                <li>Shipping methods</li>
+                                <li>Conformity of the products</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="social-links-warp">
+            <div class="container">
+                <div class="social-links">
+                    <a href="" class="instagram"><span>instagram</span></a>
+                    <a href="" class="pinterest"><span>pinterest</span></a>
+                    <a href="" class="facebook"><span>facebook</span></a>
+                    <a href="" class="twitter"><span>twitter</span></a>
+                    <a href="" class="youtube"><span>youtube</span></a>
+                    <a href="" class="tumblr"><span>tumblr</span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

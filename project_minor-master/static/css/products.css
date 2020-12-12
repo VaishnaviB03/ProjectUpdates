@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+::selection {
+    color: #fff;
+    background: #ff7979;
+}
+
+.wrapper {
+    position: relative;
+    height: 200vh;
+    /* max-width: 1130px; */
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+    grid-template-rows: 400px 400px 400px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 13%;
+    margin-top: -5%;
+}
+
+.cart-nav {
+    position: absolute;
+    left: -12%;
+    top: 8.1%;
+    width: 150px;
+    background: #1e272e;
+    padding: 13px 15px;
+    border-radius: 3px;
+    font-size: 25px;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-evenly;
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
+.cart-nav .icon {
+    color: aqua;
+}
+
+.cart-nav .icon i {
+    font-size: 20px;
+}
+
+.cart-nav .icon span {
+    font-weight: 500;
+}
+
+.cart-nav .item-count {
+    font-size: 20px;
+    margin-top: 6px;
+    height: 25px;
+    width: 23px;
+    color: rgb(0, 0, 0);
+    background: aqua;
+    text-align: center;
+    line-height: 22px;
+    border: 1px solid aqua;
+    border-radius: 50%;
+}
+
+.wrapper .card {
+    position: relative;
+    background: #fff;
+    border-radius: 3px;
+    width: calc(100% - 50px);
+    margin-top: 200px;
+    overflow: hidden;
+    box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.26);
+}
+
+.wrapper .card img {
+    width: 100%;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.wrapper .card .content {
+    position: absolute;
+    width: 100%;
+    bottom: -50%;
+    background: #fff;
+    padding: 10px 20px 22px 20px;
+    box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.486);
+    transition: all 0.3s ease;
+}
+
+.wrapper .card:hover .content {
+    bottom: 0;
+}
+
+.card .content .row,
+.content .buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content .row .details span {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.content .row .details p {
+    color: #333;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.content .row .price {
+    color: black;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.content .buttons {
+    margin-top: 20px;
+}
+
+.content .buttons button {
+    width: 100%;
+    padding: 9px 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 3px;
+    /* border: 2px solid #1e272e; */
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.buttons button:first-child {
+    color: #000000;
+    font-weight: 600;
+    margin-right: 10px;
+    background: rgb(255, 255, 255);
+}
+
+button:first-child:hover {
+    color: #fff;
+    background: #1e272e;
+}
+
+.buttons button:last-child {
+    color: #fff;
+    margin-left: 10px;
+    font-weight: 600;
+    background: crimson;
+}
+
+button:last-child:hover {
+    background: crimson;
+    color: rgb(0, 0, 0);
+}

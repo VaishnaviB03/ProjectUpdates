@@ -3,25 +3,36 @@
 
 <head>
     <title>SignUp</title>
+    <link rel="stylesheet" href="../static/css/signup.css">
+    <script src="https://kit.fontawesome.com/aa1e6c4931.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <form name="SignUp" action="/signup" method="POST">
-        <p>Name</p>
-        <input type="text" name="name" placeholder=" Name" id="Name">
-        <br>
-        <p>Email</p>
-        <input type="text" name="email_id" placeholder="Email" id="Email">
-        <br>
-        <p>Contact</p>
-        <input type="text" name="contact" placeholder="Contact" id="Contact">
-        <p>Password</p>
-        <input type="password" name="password" placeholder="enter password" id="Password">
-        <br>
-        <p>Confirm Password</p>
-        <input type="password" name="confirmpassword" placeholder="Confirm Password" id="ConfirmPass">
-        <br>
-        <input type="submit" name="" value="Login">
+    <form name="SignUp" action="/signup" method="POST" class="signup">
+        <h1>SignUp</h1>
+        <div class="content">
+            <!-- <p>Name</p> -->
+            <i class="fas fa-envelope-open"></i>
+            <input type="text" name="name" placeholder=" Name" id="Name">
+            <br>
+            <!-- <p>Email</p> -->
+            <i class="fas fa-envelope-open"></i>
+            <input type="text" name="email_id" placeholder="Email" id="Email">
+            <br>
+            <!-- <p>Contact</p> -->
+            <i class="fas fa-phone-alt"></i>
+            <input type="text" name="contact" placeholder="Contact" id="Contact">
+            <br>
+            <!-- <p>Password</p> -->
+            <i class="fas fa-key"></i>
+            <input type="password" name="password" placeholder="enter password" id="Password">
+            <br>
+            <!-- <p>Confirm Password</p> -->
+            <i class="fas fa-key"></i>
+            <input type="password" name="confirmpassword" placeholder="Confirm Password" id="ConfirmPass">
+            <br>
+            <input type="submit" name="" value="Login" id="submit">
+        </div>
     </form>
 </body>
 
