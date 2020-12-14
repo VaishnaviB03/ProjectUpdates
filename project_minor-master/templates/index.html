@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap">
     <link href="js.js">
     <link rel="stylesheet" href="{{url_for('static',filename='css/style1.css')}}">
-    <link rel="stylesheet" href="../static/css/style1.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style1.css')}}">
 </head>
 
 <body>
@@ -41,34 +41,36 @@
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="team.html" target="_blank">Team</a>
+                                </li>
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="#">Shop<span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="/products">Shop<span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Wishlist</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Cart</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="team.html" target="_blank">Team</a>
-                                </li>
+
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories
                                 </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="#">cat1</a>
-                                        <a class="dropdown-item" href="#">cat2</a>
-                                        <a class="dropdown-item" href="#">cat3</a>
-                                        <a class="dropdown-item" href="#">cat4</a>
-                                        <a class="dropdown-item" href="#">cat5</a>
-                                        <a class="dropdown-item" href="#">cat6</a>
-                                        <a class="dropdown-item" href="#">cat7</a>
-                                        <a class="dropdown-item" href="#">cat8</a>
+                                        <a class="dropdown-item" href="#">Home Decor</a>
+                                        <a class="dropdown-item" href="#">Clothing</a>
+                                        <a class="dropdown-item" href="#">Bags</a>
+                                        <a class="dropdown-item" href="#">Jwellery</a>
+                                        <a class="dropdown-item" href="#">Footwear</a>
+                                        <a class="dropdown-item" href="#">Toys</a>
+                                        <a class="dropdown-item" href="#">Food Items</a>
+                                        <!-- <a class="dropdown-item" href="#">cat8</a> -->
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Explore More!</a>
                                     </div>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/signup">SignUp</a>
-                                </li>
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="/login">Login</a>
                                 </li>
@@ -92,8 +94,8 @@
                         <!-- left side -->
                         <div class="col-md-6 col-12 main_header_left">
                             <p>Welcome! Here you'll get</p>
-                            <h1>A little bit of <span class="text_clr">E V E R  T H I N G</span></h1>
-                            <a href="#"><button>shop now</button></a>
+                            <h1>A little bit of <span class="text_clr">E V E R Y T H I N G</span></h1>
+                            <a href="/products"><button>shop now</button></a>
                         </div>
                         <!-- right side -->
                         <div class="col-md-6 col-12 main_header_right">
@@ -246,60 +248,26 @@
                     </div>
                 </div>
             </div>
-            <div class="footer-widget">
-                <div class="row">
+            <form action="#" class="message">
+                <h1>Get in touch</h1>
+                <input type="text" class="name" placeholder="Enter you name">
+                <input type="email" class="email" placeholder="Enter you mail"> <br>
+                <input type="text" class="mssg" placeholder="Enter your message">
+            </form>
+            <button class="submitbtn">Submit</button>
 
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-footer-widget">
-                            <h4>Customer Care</h4>
-                            <ul>
-                                <li>Search</li>
-                                <li>Privacy Policy</li>
-                                <li>2019 Lookbook</li>
-                                <li>Shipping & Delivery</li>
-                                <li>Gallery</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-footer-widget">
-                            <h4>Our Services</h4>
-                            <ul>
-                                <li>Free Shipping</li>
-                                <li>Free Returnes</li>
-                                <li>Our Franchising</li>
-                                <li>Terms and conditions</li>
-                                <li>Privacy Policy</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-footer-widget">
-                            <h4>Information</h4>
-                            <ul>
-                                <li>Payment methods</li>
-                                <li>Times and shipping costs</li>
-                                <li>Product Returns</li>
-                                <li>Shipping methods</li>
-                                <li>Conformity of the products</li>
-                            </ul>
-                        </div>
+            <div class="social-links-warp">
+                <div class="container">
+                    <div class="social-links">
+                        <a href="" class="instagram"><span>instagram</span></a>
+                        <a href="" class="pinterest"><span>pinterest</span></a>
+                        <a href="" class="facebook"><span>facebook</span></a>
+                        <a href="" class="twitter"><span>twitter</span></a>
+                        <a href="" class="youtube"><span>youtube</span></a>
+                        <a href="" class="tumblr"><span>tumblr</span></a>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="social-links-warp">
-            <div class="container">
-                <div class="social-links">
-                    <a href="" class="instagram"><span>instagram</span></a>
-                    <a href="" class="pinterest"><span>pinterest</span></a>
-                    <a href="" class="facebook"><span>facebook</span></a>
-                    <a href="" class="twitter"><span>twitter</span></a>
-                    <a href="" class="youtube"><span>youtube</span></a>
-                    <a href="" class="tumblr"><span>tumblr</span></a>
-                </div>
-            </div>
-        </div>
     </footer>
 
 </body>

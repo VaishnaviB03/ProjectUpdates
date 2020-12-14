@@ -3,33 +3,27 @@
 
 <head>
     <title>Login</title>
-    <link rel="stylesheet" href="../static/css/login.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">
     <script src="https://kit.fontawesome.com/aa1e6c4931.js" crossorigin="anonymous"></script>
+    <script defer src="{{url_for('static', filename='scripts/login.js')}}"></script>
 </head>
 
 <body>
-
-
-    <form name="LoginForm" action="/login" method="POST" class="form">
-        <div class="content">
-            <!-- <p>username</p> -->
-            <i class="fas fa-envelope-open" size="7x"></i>
-            <input type="text" name="username" placeholder="Enter Username" id="username" autocomplete="off">
-            <!-- <p>password</p> -->
-            <i class="fas fa-key"></i>
-            <input type="password" name="password" placeholder="Enter Password" id="password">
-            <br>
-            <input type="submit" name="" value="Login" id="submitBtn">
-            <p>Not a member? <a href="/signup">Signup</a></p>
+    <form name="Login" action="/login" id="form" method="POST">
+        <div id="error">Enter Your Credentials</div>
+        <div>
+            <!-- <label for="name">name</label> -->
+            <i class="fas fa-file-signature"></i>
+            <input name="username" type="text" id="name" placeholder="Enter username" aria-autocomplete="off" />
         </div>
-
+        <div>
+            <!-- <label for="pass">password</label> -->
+            <i class="fas fa-unlock-alt"></i>
+            <input name="password" type="password" id="password" placeholder="Enter password">
+        </div>
+        <button type="submit" id="submitBtn">login</button>
+        <p>Not a member? <a href="/signup">Signup</a></p>
     </form>
-    <!-- <span id="error"></span> {%for user in info%}
-    <div>{{user}}</div>
-    {%endfor%} -->
-    <script src="{{url_for('static',filename='/css/app.js')}}" type="text/JavaScript"></script>
-
-
 </body>
 
 </html>

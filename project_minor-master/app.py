@@ -50,9 +50,16 @@ def UserLogin():
         # context={
         #     "info":userInfo
         # }
-        return render_template('login.html',context)
-    else:
-        return render_template('login.html')
+        return render_template('index.html')
+
+    return render_template('login.html')
+
+    # else:
+    #     return render_template('login.html')
+
+@app.route('/products', methods = ['GET','POST'])
+def Store():
+     return render_template('products.html')
   
     
 if __name__ == '__main__':

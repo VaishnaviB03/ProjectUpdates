@@ -17,18 +17,41 @@
             height: 100vh;
         }
         
-        img {
+        .loader {
+            height: 500px;
+            width: 500px;
             border-radius: 50%;
-            box-shadow: 0 0 50px #800000;
+            border-top: 5px solid #e50914;
+            /*box-shadow: 0px 8px 20px #360205;*/
+        }
+        
+        .loader:hover {
+            box-shadow: 0px 8px 20px #360205 inset;
+            transition-delay: 0.5s ease-in-out;
+            cursor: pointer;
+        }
+        
+        .loader h1 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #e50914;
+            font-size: 7em;
+            letter-spacing: 40px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin-top: 30%;
+            margin-left: 40px;
+            text-shadow: 0px 8px 5px #630505;
         }
     </style>
 </head>
 
 <body>
-    <div class="main_div" style="background-color: #1e272e;">
+    <div class="main_div" style="background-color: #e50914;">
 
         <div class="loader">
-            <img src="images/Purple Rectangles Attorney & Law Logo (1).png" alt="">
+            <!-- <img src="../static/images/Purple Rectangles Attorney & Law Logo (1).png" alt=""> -->
+            <h1>NEEV</h1>
 
         </div>
     </div>
