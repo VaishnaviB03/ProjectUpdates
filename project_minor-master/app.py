@@ -50,7 +50,8 @@ def UserLogin():
         # context={
         #     "info":userInfo
         # }
-        return render_template('index.html')
+        # return render_template('index.html')
+        return redirect('/')
 
     return render_template('login.html')
 
