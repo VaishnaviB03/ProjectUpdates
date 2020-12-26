@@ -19,3 +19,13 @@ form.addEventListener('submit', (l) => {
         errorElement.innerText = messages.join(' , ')
     }
 })
+
+function Alert() {
+    let name = document.getElementById("c_name").value
+    if (name == "") {
+        alert(`enter your name`)
+    } else {
+        alert(`Thanks ${name}! Your response has been recorded`);
+    }
+
+}

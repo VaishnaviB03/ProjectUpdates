@@ -8,12 +8,23 @@ from models import Login
 app = Flask(__name__)
 app.secret_key = 'hello'
 
-@app.route('/')
-def home():
+@app.route('/', methods = ['GET' , 'POST'])
+def Contact():
+    if request.method == 'POST':
+        cname = request.form.get('c_name')
+        cemail_id = request.form.get('c_email')
+        cmessage = request.form.get('mssg')
+        db.execute("""insert into contacts(name,email,message) VALUES('{}', '{}','{}')""".format(cname,cemail_id,cmessage))
+        db.commit()
+        print("mssg stored!")   
+        return render_template('index.html')
+
+    
     # if login==True:
     #     return render_template('home.html')
     # else:
-        return render_template('index.html')
+    print("if condition is not executed btn")
+    return render_template('index.html')
 
 @app.route('/signup', methods = ['GET','POST'])
 def Signup():

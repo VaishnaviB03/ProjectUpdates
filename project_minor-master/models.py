@@ -19,3 +19,8 @@ class Signup(db1.Model):
     password = db1.Column(db1.String(20),unique = True)
     confirmpassword = db1.Column(db1.String(20),unique = True)
 
+class Contacts(db1.Model):
+    id = db1.Column(db1.Integer, primary_key = True)
+    name =  db1.Column(db1.String(20),unique = True)
+    email =  db1.Column(db1.String(20),unique = True)
+    message =  db1.Column(db1.String(200),unique = True)
