@@ -17,15 +17,15 @@ html {
 
 body {
     /* height: 100vh; */
-    background: #c4d3db;
-    /* background: url('../images/Web\ 1920\ –\ 1.png'); */
+    /* background: #c4d3db; */
+    background-image: url('../static/images/background1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .firstpage {
     height: 100vh;
-    /* background: url("../images/Web\ 1920\ –\ 1@2x.png"); */
+    background: url('../static/images/background1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
