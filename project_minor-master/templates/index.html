@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="{{url_for('static',filename='css/style1.css')}}">
     <!-- <link rel="stylesheet" href="{{url_for('static',filename='css/style1.css')}}"> -->
     <script defer src="{{url_for('static', filename='scripts/login.js')}}"></script>
-    <link rel="stylesheet" href="../static/css/style1.css">
+    <!-- <link rel="stylesheet" href="../static/css/style1.css"> -->
 </head>
 
 <body>
@@ -237,7 +237,7 @@
         </div>
     </div>
 
-
+    <!-- Footer -->
     <footer class="footer-section spad">
         <div class="container">
             <div class="newslatter-form">
@@ -254,7 +254,7 @@
                 <h1>Get in touch</h1>
                 <input type="text" class="name" name="c_name" id="c_name" placeholder="Enter you name">
                 <input type="text" name="c_email" class="email" id="c_email" placeholder="Enter you mail"> <br>
-                <input type="text" class="mssg" name="mssg" id="mssg" placeholder="Enter your message">
+                <textarea rows="5" type="text" class="mssg" name="mssg" id="mssg" placeholder="Enter your message"></textarea>
                 <button class="submitbtn" id="submitbtn" type="submit" onclick="Alert()">Submit</button>
             </form>
             <!-- <button class="submitbtn">Submit</button> -->

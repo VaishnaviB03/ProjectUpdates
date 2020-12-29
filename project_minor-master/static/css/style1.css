@@ -18,14 +18,14 @@ html {
 body {
     /* height: 100vh; */
     /* background: #c4d3db; */
-    background-image: url('../static/images/background1.jpg');
+    background-image: url('../static/images/background2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .firstpage {
     height: 100vh;
-    background: url('../static/images/background1.jpg');
+    background: url('../static/images/background2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }

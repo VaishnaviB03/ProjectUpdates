@@ -244,13 +244,20 @@
                         </div>
                     </div>
                 </div>
-                <form action="#" class="message">
+                <form class="message" action="/" method="POST">
+                    <h1>Get in touch</h1>
+                    <input type="text" class="name" name="c_name" id="c_name" placeholder="Enter you name">
+                    <input type="text" name="c_email" class="email" id="c_email" placeholder="Enter you mail"> <br>
+                    <textarea rows="5" type="text" class="mssg" name="mssg" id="mssg" placeholder="Enter your message"></textarea>
+                    <button class="submitbtn" id="submitbtn" type="submit" onclick="Alert()">Submit</button>
+                </form>
+                <!-- <form action="#" class="message">
                     <h1>Get in touch</h1>
                     <input type="text" class="name" placeholder="Enter you name">
                     <input type="email" class="email" placeholder="Enter you mail"> <br>
                     <input type="text" class="mssg" placeholder="Enter your message">
-                </form>
-                <button class="submitbtn">Submit</button>
+                </form> -->
+                <!-- <button class="submitbtn">Submit</button> -->
 
                 <div class="social-links-warp">
                     <div class="container">

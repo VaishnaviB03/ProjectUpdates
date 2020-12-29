@@ -20,6 +20,7 @@ def Contact():
         return render_template('index.html')
 
     
+
     # if login==True:
     #     return render_template('home.html')
     # else:
@@ -42,7 +43,7 @@ def Signup():
         db.execute("""INSERT INTO signup(id,name,email_id,contact,password,confirmpassword) VALUES(NULL,'{}', '{}','{}','{}','{}')""".format(name,email_id,contact,password,confirmpassword))
         # db.execute('INSERT INTO signup(Name,Email,Contact,Password,ConfirmPass) VALUES(:Name, :Email, :Contact, :Password, :ConfirmPass)',{'Name':Name,'Email':Email,'Contact':Contact,'Password':Password,'ConfirmPass':ConfirmPass})
         db.commit()
-        return render_template('index.html')
+        return redirect('/')
 
     return render_template('signup.html')  
   
