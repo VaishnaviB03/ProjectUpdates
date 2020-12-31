@@ -8,4 +8,5 @@ engine = create_engine('mysql+mysqlconnector://root:@localhost/neev')
 app.config['SQLAlchemy_DATABASE_URI'] = 'mysql+mysqlconnector://root:localhost/neev'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=True
 db1=SQLAlchemy() # For Database creation
+db1.init_app(app)
 db = scoped_session(sessionmaker(bind=engine)) #For DB commits Insert,Delete,select,(queries)

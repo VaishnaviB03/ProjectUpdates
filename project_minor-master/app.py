@@ -3,10 +3,12 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from flask_sqlalchemy import SQLAlchemy
 from db import db1,db
+import models
 from models import Login
 
 app = Flask(__name__)
 app.secret_key = 'hello'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=True
 
 @app.route('/', methods = ['GET' , 'POST'])
 def Contact():
@@ -63,7 +65,8 @@ def UserLogin():
         #     "info":userInfo
         # }
         # return render_template('index.html')
-        return redirect('/')
+        
+        return render_template('index.html')
 
     return render_template('login.html')
 
@@ -72,8 +75,21 @@ def UserLogin():
 
 @app.route('/products', methods = ['GET','POST'])
 def Store():
-     return render_template('products.html')
+        data= db.execute('SELECT * FROM categories')
+        # print(data.fetchall()[0][1])
+       
+        categories=data.fetchall()
+       
+        #[(1,name,data),(1,name,data),(1,name,data)]
+        #   0 1   2      0  1   2
+        #   0               1               2
+        #fetchall[(),(),()]
+        #fetchall()[0][1]
+        
+        
+        return render_template('products.html',categories=categories)
   
     
 if __name__ == '__main__':
     app.run(debug = True)
+    db1.init_app(app)

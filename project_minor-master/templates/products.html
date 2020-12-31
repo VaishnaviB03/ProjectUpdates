@@ -86,16 +86,17 @@
         </div>
         <!-- </section> -->
         <div class="wrapper">
-
+            {%for i in categories%}
             <div class="card">
-                <img src="{{url_for('static',filename='images/headphone.png')}}" alt="">
+                <img src="{{i.image}}" alt="">
+                <!-- Rendering Image from database i.e /static/images/home1 etc..-->
                 <div class="content">
                     <div class="row">
                         <div class="details">
-                            <span>Headphone</span>
-                            <p>Premium headphone</p>
+                            <span></span>
+                            <p>{{i.p_name}}</p>
                         </div>
-                        <div class="price">30</div>
+                        <div class="price">{{i.sellprice}}</div>
                     </div>
                     <div class="buttons">
                         <button>Buy Now</button>
@@ -103,135 +104,9 @@
                     </div>
                 </div>
             </div>
-            <div class="card">
-                <img src="{{url_for('static',filename='images/watch.png')}}" alt="">
-                <div class="content">
-                    <div class="row">
-                        <div class="details">
-                            <span>Apple Watch</span>
-                            <p>Premium digital watch</p>
-                        </div>
-                        <div class="price">80</div>
-                    </div>
-                    <div class="buttons">
-                        <button>Buy Now</button>
-                        <button class="cart-btn">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="{{url_for('static',filename='images/watch.png')}}" alt="">
-                <div class="content">
-                    <div class="row">
-                        <div class="details">
-                            <span>Apple Airpod</span>
-                            <p>Premium black airpod</p>
-                        </div>
-                        <div class="price">50</div>
-                    </div>
-                    <div class="buttons">
-                        <button>Buy Now</button>
-                        <button class="cart-btn">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="{{url_for('static',filename='images/watch.png')}}" alt="">
-                <div class="content">
-                    <div class="row">
-                        <div class="details">
-                            <span>Apple Airpod</span>
-                            <p>Premium black airpod</p>
-                        </div>
-                        <div class="price">50</div>
-                    </div>
-                    <div class="buttons">
-                        <button>Buy Now</button>
-                        <button class="cart-btn">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="{{url_for('static',filename='images/watch.png')}}" alt="">
-                <div class="content">
-                    <div class="row">
-                        <div class="details">
-                            <span>Apple Airpod</span>
-                            <p>Premium black airpod</p>
-                        </div>
-                        <div class="price">50</div>
-                    </div>
-                    <div class="buttons">
-                        <button>Buy Now</button>
-                        <button class="cart-btn">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="{{url_for('static',filename='images/watch.png')}}" alt="">
-                <div class="content">
-                    <div class="row">
-                        <div class="details">
-                            <span>Apple Airpod</span>
-                            <p>Premium black airpod</p>
-                        </div>
-                        <div class="price">50</div>
-                    </div>
-                    <div class="buttons">
-                        <button>Buy Now</button>
-                        <button class="cart-btn">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="{{url_for('static',filename='images/watch.png')}}" alt="">
-                <div class="content">
-                    <div class="row">
-                        <div class="details">
-                            <span>Apple Airpod</span>
-                            <p>Premium black airpod</p>
-                        </div>
-                        <div class="price">50</div>
-                    </div>
-                    <div class="buttons">
-                        <button>Buy Now</button>
-                        <button class="cart-btn">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="{{url_for('static',filename='images/watch.png')}}" alt="">
-                <div class="content">
-                    <div class="row">
-                        <div class="details">
-                            <span>Apple Airpod</span>
-                            <p>Premium black airpod</p>
-                        </div>
-                        <div class="price">50</div>
-                    </div>
-                    <div class="buttons">
-                        <button>Buy Now</button>
-                        <button class="cart-btn">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="{{url_for('static',filename='images/watch.png')}}" alt="">
-                <div class="content">
-                    <div class="row">
-                        <div class="details">
-                            <span>Apple Airpod</span>
-                            <p>Premium black airpod</p>
-                        </div>
-                        <div class="price">50</div>
-                    </div>
-                    <div class="buttons">
-                        <button>Buy Now</button>
-                        <button class="cart-btn">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
+            {%endfor%}
         </div>
+
         <footer class="footer-section spad">
             <div class="container">
                 <div class="newslatter-form">
