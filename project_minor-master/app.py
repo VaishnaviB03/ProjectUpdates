@@ -89,7 +89,12 @@ def Store():
         
         return render_template('products.html',categories=categories)
   
-    
+@app.route('/cart', methods = ['GET','POST'])
+def Cart():
+    # data = db.execute('SELECT * from categories')
+    # categories = data.fetchall()
+    return render_template('cart.html')
+
 if __name__ == '__main__':
     app.run(debug = True)
     db1.init_app(app)

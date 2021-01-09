@@ -78,12 +78,12 @@
 }
 
 .wrapper .card .content {
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
     bottom: -50%;
     background: #fff;
     padding: 10px 20px 22px 20px;
-    box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.486);
+    /* box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.486); */
     transition: all 0.3s ease;
 }
 
@@ -147,10 +147,9 @@ button:first-child:hover {
     color: #fff;
     margin-left: 10px;
     font-weight: 600;
-    background: crimson;
+    background: rgb(35, 156, 212);
 }
 
 button:last-child:hover {
-    background: crimson;
     color: rgb(0, 0, 0);
 }
