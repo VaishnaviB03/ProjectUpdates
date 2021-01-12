@@ -91,9 +91,26 @@ def Store():
   
 @app.route('/cart', methods = ['GET','POST'])
 def Cart():
-    # data = db.execute('SELECT * from categories')
-    # categories = data.fetchall()
-    return render_template('cart.html')
+    data = db.execute('SELECT * from categories')
+    categories = data.fetchall()
+    return render_template('cart.html',categories=categories)
+
+@app.route('/admin', methods= ['GET','POST'])
+def admin():
+    if request.method == 'POST':
+        p_id = request.form.get('p_id')
+        p_name = request.form.get('p_name')
+        p_type = request.form.get('p_type')
+        p_image = request.form.get('p_image')
+        p_desc = request.form.get('p_desc')
+        p_quantity= request.form.get('p_quantity')
+        p_amount = request.form.get('p_amount')
+        email = request.form.get('email')
+        contact = request.form.get('contact')
+        db.execute("""INSERT INTO admin(p_id,p_name,p_type,p_image,p_desc,p_quantity,p_amount,email,contact) VALUES('{}', '{}', '{}', '{}','{}','{}','{}','{}','{}')""".format(p_id,p_name, p_type,p_image,p_desc,p_quantity,p_amount,email,contact))
+        db.commit()
+        return render_template('admin.html')
+    return render_template('admin.html')
 
 if __name__ == '__main__':
     app.run(debug = True)

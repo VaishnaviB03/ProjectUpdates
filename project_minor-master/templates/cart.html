@@ -9,268 +9,247 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/cart.css')}}">
     <title>Cart</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style1.css')}}">
+    <!-- <link rel="stylesheet" href="{{url_for('static',filename='css/style1.css')}}"> -->
+    <script defer src="{{url_for('static', filename='scripts/login.js')}}"></script>
 </head>
 
+
 <body class="bg-light">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-10 col-11 mx-auto">
-                <div class="row mt-5 gx-3">
-                    <!-- left side div -->
-                    <div class="col-md-12 col-lg-8 col-11 mx-auto main_cart mb-lg-0 mb-5 shadow">
-                        <div class="card p-4">
-                            <h2 class="py-4 font-weight-bold">Cart (3 items)</h2>
-                            <div class="row">
-                                <!-- cart images div -->
-                                <div class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img">
-                                    <img src="{{url_for('static',filename='images/headphone.png')}}" class="img-fluid" alt="cart img">
-                                </div>
+    <section class="firstpage">
 
-                                <!-- cart product details -->
-                                <div class="col-md-7 col-11 mx-auto px-4 mt-2">
-                                    <div class="row">
-                                        <!-- product name  -->
-                                        <div class="col-6 card-title">
-                                            <h1 class="mb-4 product_name">Headphone</h1>
-                                            <p class="mb-2">Premium headphone</p>
-                                            <p class="mb-2">COLOR: Black</p>
-                                            <p class="mb-3">SIZE: M</p>
-                                        </div>
-                                        <!-- quantity inc dec -->
-                                        <div class="col-6">
-                                            <ul class="pagination justify-content-end set_quantity">
-                                                <li class="page-item">
-                                                    <button class="page-link " onclick="decreaseNumber('textbox','itemval')">
+        <div></div>
+        <div class="container-fluid main_menu">
+            <div class="row">
+                <div class="col-md-15 col-12 mx-auto">
+                    <nav class="navbar navbar-expand-lg ">
+                        <!-- <a class="navbar-brand" href="#" style="font-size: 30px;"> <i class="fas fa-circle-notch"></i> N E E V <i class="fas fa-circle-notch"></i></a> -->
+                        <a class="navbar-brand" href="/" style="font-size: 30px;"> <i class="fab fa-battle-net"></i> N E E V</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="team.html" target="_blank">Team</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/products">Shop<span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Wishlist</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/cart">Cart</a>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories
+                                </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#">Home Decor</a>
+                                        <a class="dropdown-item" href="#">Clothing</a>
+                                        <a class="dropdown-item" href="#">Bags</a>
+                                        <a class="dropdown-item" href="#">Jwellery</a>
+                                        <a class="dropdown-item" href="#">Footwear</a>
+                                        <a class="dropdown-item" href="#">Toys</a>
+                                        <a class="dropdown-item" href="#">Food Items</a>
+                                        <!-- <a class="dropdown-item" href="#">cat8</a> -->
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Explore More!</a>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/login">Login</a>
+                                </li>
+
+                            </ul>
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10 col-11 mx-auto">
+                    <div class="row mt-5 gx-3">
+                        <!-- left side div -->
+                        {% for i in categories %}
+                        <div class="col-md-12 col-lg-8 col-11 mx-auto main_cart mb-lg-0 mb-5 shadow">
+                            <div class="card p-4">
+                                <h2 class="py-4 font-weight-bold">{{i.p_name}}</h2>
+                                <div class="row">
+
+                                    <!-- cart images div -->
+                                    <div class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img">
+                                        <!-- <img src="{{url_for('static',filename='images/headphone.png')}}" class="img-fluid" alt="cart img"> -->
+                                        <img src="{{i.p_image}}" alt="">
+                                    </div>
+
+                                    <!-- cart product details -->
+                                    <div class="col-md-7 col-11 mx-auto px-4 mt-2">
+                                        <div class="row">
+                                            <!-- product name  -->
+                                            <div class="col-6 card-title">
+                                                <h1 class="mb-4 product_name">{{i.p_desc}}</h1>
+                                                <p class="mb-2">{{i.sellprice}}</p>
+                                                <!-- <p class="mb-2">{{i.p_img}}</p> -->
+                                                <!-- <p class="mb-3">{{i.p_cost}}</p> -->
+                                            </div>
+                                            <!-- quantity inc dec -->
+                                            <div class="col-6">
+                                                <ul class="pagination justify-content-end set_quantity">
+                                                    <li class="page-item">
+                                                        <button class="page-link" onclick="decreaseNumber(event)">
                                                     <i class="fas fa-minus"></i> </button>
-                                                </li>
-                                                <li class="page-item"><input type="text" name="" class="page-link" value="0" id="textbox">
-                                                </li>
-                                                <li class="page-item">
-                                                    <button class="page-link" onclick="increaseNumber('textbox','itemval')"> <i class="fas fa-plus"></i></button>
-                                                </li>
-                                            </ul>
+                                                    </li>
+                                                    <li class="page-item"><input type="text" class="page-link" value="0" id="textbox">
+                                                    </li>
+                                                    <li class="page-item">
+                                                        <button class="page-link" name="{{i}}" onclick="increaseNumber(event)"> <i class="fas fa-plus"></i></button>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!-- //remover move and price -->
-                                    <div class="row">
-                                        <div class="col-8 d-flex justify-content-between remove_wish">
-                                            <p><i class="fas fa-trash-alt">   </i> REMOVE ITEM</p>
-                                            <p><i class="fas fa-heart"></i>MOVE TO WISH LIST </p>
-                                        </div>
-                                        <div class="col-4 d-flex justify-content-end price_money">
-                                            <h3>$<span id="itemval">0.00 </span></h3>
+                                        <!-- //remover move and price -->
+                                        <div class="row">
+                                            <div class="col-8 d-flex justify-content-between remove_wish">
+                                                <p><i class="fas fa-trash-alt"></i>REMOVE ITEM</p>
+                                                <p><i class="fas fa-heart"></i>MOVE TO WISH LIST </p>
+                                            </div>
+                                            <div class="col-4 d-flex justify-content-end price_money">
+                                                <h3>$<span id="itemval">0.00 </span></h3>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        {%endfor%}
                         <hr/>
-                        <!-- 2nd cart product -->
-                        <div class="card p-4">
-                            <div class="row">
-                                <!-- cart images div -->
-                                <div class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img">
-                                    <img src="{{url_for('static',filename='images/airpods.png')}}" class="img-fluid" alt="cart img">
+
+                        <!-- right side div -->
+                        <div class="col-md-12 col-lg-4 col-11 mx-auto mt-lg-0 mt-md-5">
+                            <div class="right_side p-3 shadow bg-white ">
+                                <h2 class="product_name mb-5">The Total Amount Of</h2>
+                                <div class="price_indiv d-flex justify-content-between">
+                                    <p>Product amount</p>
+                                    <p>$<span id="product_total_amt">0.00</span></p>
                                 </div>
-
-                                <!-- cart product details -->
-                                <div class="col-md-7 col-11 mx-auto px-4 mt-2">
-                                    <div class="row">
-                                        <!-- product name  -->
-                                        <div class="col-6 card-title">
-                                            <h1 class="mb-4 product_name">Apple Airpod</h1>
-                                            <p class="mb-2">Premium black airpod</p>
-                                            <p class="mb-2">COLOR: Black</p>
-                                            <p class="mb-3">SIZE: M</p>
-                                        </div>
-                                        <!-- quantity inc dec -->
-                                        <div class="col-6">
-                                            <ul class="pagination justify-content-end set_quantity">
-                                                <li class="page-item">
-                                                    <button class="page-link " onclick="decreaseNumber('textbox1','itemval1')"> <i class="fas fa-minus"></i> </button>
-                                                </li>
-                                                <li class="page-item"><input type="text" name="" class="page-link" value="0" id="textbox1">
-                                                </li>
-                                                <li class="page-item">
-                                                    <button class="page-link" onclick="increaseNumber('textbox1','itemval1')"> <i class="fas fa-plus"></i></button>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- //remover move and price -->
-                                    <div class="row">
-                                        <div class="col-8 d-flex justify-content-between remove_wish">
-                                            <p><i class="fas fa-trash-alt"></i> REMOVE ITEM</p>
-                                            <p><i class="fas fa-heart"></i>MOVE TO WISH LIST </p>
-                                        </div>
-                                        <div class="col-4 d-flex justify-content-end price_money">
-                                            <h3>$<span id="itemval1">0.00 </span> </h3>
-                                        </div>
-                                    </div>
+                                <div class="price_indiv d-flex justify-content-between">
+                                    <p>Shipping Charge</p>
+                                    <p>$<span id="shipping_charge">50.0</span></p>
                                 </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <!-- 3rd cart product -->
-                        <div class="card p-4">
-                            <div class="row">
-                                <!-- cart images div -->
-                                <div class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img">
-                                    <img src="{{url_for('static',filename='images/airpods.png')}}" class="img-fluid" alt="cart img">
+                                <hr />
+                                <div class="total-amt d-flex justify-content-between font-weight-bold">
+                                    <p>The total amount of (including VAT)</p>
+                                    <p>$<span id="total_cart_amt">0.00</span></p>
                                 </div>
-
-
-
-
-                                <!-- cart product details -->
-                                <div class="col-md-7 col-11 mx-auto px-4 mt-2">
-                                    <div class="row">
-                                        <!-- product name  -->
-                                        <div class="col-6 card-title">
-                                            <h1 class="mb-4 product_name">Apple Airpod</h1>
-                                            <p class="mb-2">Premium black airpod</p>
-                                            <p class="mb-2">COLOR: Black</p>
-                                            <p class="mb-3">SIZE: M</p>
-                                        </div>
-                                        <!-- quantity inc dec -->
-                                        <div class="col-6">
-                                            <ul class="pagination justify-content-end set_quantity">
-                                                <li class="page-item">
-                                                    <button class="page-link " onclick="decreaseNumber('textbox2','itemval2')"> <i class="fas fa-minus"></i> </button>
-                                                </li>
-                                                <li class="page-item"><input type="text" name="" class="page-link" value="0" id="textbox2">
-                                                </li>
-                                                <li class="page-item">
-                                                    <button class="page-link" onclick="increaseNumber('textbox2','itemval2')"> <i class="fas fa-plus"></i></button>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- //remover move and price -->
-                                    <div class="row">
-                                        <div class="col-8 d-flex justify-content-between remove_wish">
-                                            <p><i class="fas fa-trash-alt"></i> REMOVE ITEM</p>
-                                            <p><i class="fas fa-heart"></i>MOVE TO WISH LIST </p>
-                                        </div>
-                                        <div class="col-4 d-flex justify-content-end price_money">
-                                            <h3>$<span id="itemval2">0.00 </span> </h3>
-                                        </div>
-                                    </div>
-                                </div>
+                                <button class="btn btn-primary text-uppercase">Checkout</button>
                             </div>
-                        </div>
-                    </div>
-                    <!-- right side div -->
-                    <div class="col-md-12 col-lg-4 col-11 mx-auto mt-lg-0 mt-md-5">
-                        <div class="right_side p-3 shadow bg-white ">
-                            <h2 class="product_name mb-5">The Total Amount Of</h2>
-                            <div class="price_indiv d-flex justify-content-between">
-                                <p>Product amount</p>
-                                <p>$<span id="product_total_amt">0.00</span></p>
-                            </div>
-                            <div class="price_indiv d-flex justify-content-between">
-                                <p>Shipping Charge</p>
-                                <p>$<span id="shipping_charge">50.0</span></p>
-                            </div>
-                            <hr />
-                            <div class="total-amt d-flex justify-content-between font-weight-bold">
-                                <p>The total amount of (including VAT)</p>
-                                <p>$<span id="total_cart_amt">0.00</span></p>
-                            </div>
-                            <button class="btn btn-primary text-uppercase">Checkout</button>
-                        </div>
-                        <!-- discount code part -->
-                        <div class="discount_code mt-3 shadow">
-                            <div class="card">
-                                <div class="card-body">
-                                    <a class="d-flex justify-content-between" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            <!-- discount code part -->
+                            <div class="discount_code mt-3 shadow">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <a class="d-flex justify-content-between" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                     Add a discount code (optional)
                                     <span><i class="fas fa-chevron-down pt-1"></i></span>
                                     </a>
-                                    <div class="collapse" id="collapseExample">
-                                        <div class="mt-3">
-                                            <input type="text" name="" id="discount_code1" class="form-control font-weight-bold" placeholder="Enter the discount code">
-                                            <small id="error_trw" class="text-dark mt-3">code is Neev</small>
+                                        <div class="collapse" id="collapseExample">
+                                            <div class="mt-3">
+                                                <input type="text" name="" id="discount_code1" class="form-control font-weight-bold" placeholder="Enter the discount code">
+                                                <small id="error_trw" class="text-dark mt-3">code is Neev</small>
+                                            </div>
+                                            <button class="btn btn-primary btn-sm mt-3" onclick="discount_code()">Apply</button>
                                         </div>
-                                        <button class="btn btn-primary btn-sm mt-3" onclick="discount_code()">Apply</button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
 
 
 
-                        <!-- discount code ends -->
-                        <div class="mt-3 shadow p-3 bg-white">
-                            <div class="pt-4">
-                                <h5 class="mb-4">Expected delivery date</h5>
-                                <p style="font-weight: 800;">Januar 27th 2021- January 29th 2021</p>
+                            <!-- discount code ends -->
+                            <div class="mt-3 shadow p-3 bg-white">
+                                <div class="pt-4">
+                                    <h5 class="mb-4">Expected delivery date</h5>
+                                    <p style="font-weight: 800;">Januar 27th 2021- January 29th 2021</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Optional JavaScript -->
-    <!-- Popper.js first, then Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+        <!-- Optional JavaScript -->
+        <!-- Popper.js first, then Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 
-    <script type="text/javascript">
-        var product_total_amt = document.getElementById('product_total_amt');
-        var shipping_charge = document.getElementById('shipping_charge');
-        var total_cart_amt = document.getElementById('total_cart_amt');
-        var discountCode = document.getElementById('discount_code1');
-        const decreaseNumber = (incdec, itemprice) => {
-            var itemval = document.getElementById(incdec);
-            var itemprice = document.getElementById(itemprice);
-            console.log(itemprice.innerHTML);
-            // console.log(itemval.value);
-            if (itemval.value <= 0) {
-                itemval.value = 0;
-                alert('Negative quantity not allowed');
-            } else {
-                itemval.value = parseInt(itemval.value) - 1;
-                itemval.style.background = '#fff';
-                itemval.style.color = '#000';
-                itemprice.innerHTML = parseInt(itemprice.innerHTML) - 15;
-                product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) - 15;
-                total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
+        <script type="text/javascript">
+            var product_total_amt = document.getElementById('product_total_amt');
+            var shipping_charge = document.getElementById('shipping_charge');
+            var total_cart_amt = document.getElementById('total_cart_amt');
+            var discountCode = document.getElementById('discount_code1');
+
+            const decreaseNumber = (event) => {
+                var itemval = document.getElementById(incdec);
+                var itemprice = document.getElementById(itemprice);
+                console.log(itemprice.innerHTML);
+                // console.log(itemval.value);
+
+                console.log(event.target.innerHTML)
+                if (itemval.value <= 0) {
+                    itemval.value = 0;
+                    alert('Negative quantity not allowed');
+                } else {
+                    itemval.value = parseInt(itemval.value) - 1;
+                    itemval.style.background = '#fff';
+                    itemval.style.color = '#000';
+                    itemprice.innerHTML = parseInt(itemprice.innerHTML) - 15;
+                    product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) - 15;
+                    total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
+                }
             }
-        }
-        const increaseNumber = (incdec, itemprice) => {
-            var itemval = document.getElementById(incdec);
-            var itemprice = document.getElementById(itemprice);
-            // console.log(itemval.value);
-            if (itemval.value >= 5) {
-                itemval.value = 5;
-                alert('max 5 allowed');
-                itemval.style.background = 'red';
-                itemval.style.color = '#fff';
-            } else {
-                itemval.value = parseInt(itemval.value) + 1;
-                itemprice.innerHTML = parseInt(itemprice.innerHTML) + 15;
-                product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) + 15;
-                total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
+
+            const increaseNumber = (incdec, itemprice) => {
+                var itemval = document.getElementById(incdec);
+                var itemprice = document.getElementById(itemprice);
+                // console.log(itemval.value);
+                if (itemval.value >= 5) {
+                    itemval.value = 5;
+                    alert('max 5 allowed');
+                    itemval.style.background = 'red';
+                    itemval.style.color = '#fff';
+                } else {
+                    itemval.value = parseInt(itemval.value) + 1;
+                    itemprice.innerHTML = parseInt(itemprice.innerHTML) + 15;
+                    product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) + 15;
+                    total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
+                }
             }
-        }
 
 
-        const discount_code = () => {
-            let totalamtcurr = parseInt(total_cart_amt.innerHTML);
-            let error_trw = document.getElementById('error_trw');
-            if (discountCode.value === 'Neev') {
-                let newtotalamt = totalamtcurr - 15;
-                total_cart_amt.innerHTML = newtotalamt;
-                error_trw.innerHTML = "Hurray! code is valid";
-                alert('You got discount of $15!')
-            } else {
-                error_trw.innerHTML = "Try Again! Valid code is Neev";
+            const discount_code = () => {
+                let totalamtcurr = parseInt(total_cart_amt.innerHTML);
+                let error_trw = document.getElementById('error_trw');
+                if (discountCode.value === 'Neev') {
+                    let newtotalamt = totalamtcurr - 15;
+                    total_cart_amt.innerHTML = newtotalamt;
+                    error_trw.innerHTML = "Hurray! code is valid";
+                    alert('You got discount of $15!')
+                } else {
+                    error_trw.innerHTML = "Try Again! Valid code is Neev";
+                }
             }
-        }
-    </script>
+        </script>
 </body>
 
 </html>
