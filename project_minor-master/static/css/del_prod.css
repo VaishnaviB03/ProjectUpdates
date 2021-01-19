@@ -93,7 +93,7 @@ body {
 .contact-box {
     /* max-width: 1050px; */
     display: grid;
-    grid-template-columns: 35% auto;
+    grid-template-columns: 400px 600px;
     /* grid-template-columns: repeat(2, 1fr); */
     justify-content: center;
     align-items: center;
@@ -189,11 +189,12 @@ textarea {
     background-color: #fff;
 }
 
-@media screen and (max-width: 880px) {
+
+/* @media screen and (max-width: 880px) {
     .contact-box {
         grid-template-columns: 1fr;
     }
     .left {
         height: 600px;
     }
-}
+} */

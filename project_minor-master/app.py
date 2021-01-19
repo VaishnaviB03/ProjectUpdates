@@ -109,8 +109,22 @@ def admin():
         contact = request.form.get('contact')
         db.execute("""INSERT INTO admin(p_id,p_name,p_type,p_image,p_desc,p_quantity,p_amount,email,contact) VALUES('{}', '{}', '{}', '{}','{}','{}','{}','{}','{}')""".format(p_id,p_name, p_type,p_image,p_desc,p_quantity,p_amount,email,contact))
         db.commit()
+        # db.execute("""INSERT INTO categories(p_id,p_name,p_type,p_image,p_desc,p_quantity,p_amount) VALUES('{}', '{}', '{}', '{}','{}','{}','{}')""".format(p_id,p_name, p_type,p_image,p_desc,p_quantity,p_amount))
+        # db.commit()
         return render_template('admin.html')
     return render_template('admin.html')
+
+@app.route('/Product_del' ,methods=['GET','POST'])
+def delete():
+    if request.method == 'POST':
+        if p_id in admin:
+            db.execute("""DELETE FROM admin where p_id ='{}' """)
+        else:
+            print('Incorrect Product ID')
+        return render_template('Product_del.html')    
+    return render_template('Product_del.html')
+
+
 
 if __name__ == '__main__':
     app.run(debug = True)

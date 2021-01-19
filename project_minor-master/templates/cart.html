@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{url_for('static',filename='css/style1.css')}}">
     <!-- <link rel="stylesheet" href="{{url_for('static',filename='css/style1.css')}}"> -->
     <script defer src="{{url_for('static', filename='scripts/login.js')}}"></script>
+    <script async defer src="{{url_for('static', filename='scripts/script.js')}}"></script>
 </head>
 
 
@@ -107,10 +108,10 @@
                                             <div class="col-6">
                                                 <ul class="pagination justify-content-end set_quantity">
                                                     <li class="page-item">
-                                                        <button class="page-link" onclick="decreaseNumber(event)">
+                                                        <button class="page-link" onclick="decreaseNumber(event)" data-open="{{i.id}}">
                                                     <i class="fas fa-minus"></i> </button>
                                                     </li>
-                                                    <li class="page-item"><input type="text" class="page-link" value="0" id="textbox">
+                                                    <li class="page-item"><input type="text" class="page-link {{i.id}}" value="0" id="textbox">
                                                     </li>
                                                     <li class="page-item">
                                                         <button class="page-link" name="{{i}}" onclick="increaseNumber(event)"> <i class="fas fa-plus"></i></button>

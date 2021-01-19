@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="{{url_for('static',filename='css/del_prod.css')}}"> -->
+    <link rel="stylesheet" href="../static/css/del_prod.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="contact-box">
+            <div class="left">
+                <div class="content">
+                    <h1>NEEV</h1>
+
+                    <h2>Welcome <span>ADMIN</span></h2>
+                    <p>Manage your inventry directly from here</p>
+                    <a href="#">Manage Accounts</a><br><br><br>
+                    <a href="#">View Products</a><br><br><br>
+                    <hr width="200px " style="margin-left:130px"><br><br>
+                    <div class=" manage ">
+                        <a href="/admin ">Add Product<a><br><br>
+                        <a href="/Prod_del " >Delete Product</a><br><br>
+                        <a href="# ">Update Product</a><br><br>
+                    </div>
+                    <div class="logout ">
+                        <a href="/admin"><button >Back</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="right ">
+                <h2>Delete Product</h2>
+                <input type="text" name="p_id" class="field" id="p-id" placeholder="Product ID">
+                <button class="btn">Delete</button>
+            </div>
+        </div>
+    </div>
+    <!-- <script>
+        let left = document.querySelector('.left');
+        let content = document.querySelector('.content');
+
+
+        left.addEventListener('mousemove', (event) => {
+            let move = (event.clientX * 0.02);
+            let move2 = (event.clientX * 0.003);
+
+            content.style.transform = `translateX(-${move2}%)`;
+
+
+        })
+    </script> -->
+</body>
+
+</html>

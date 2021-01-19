@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{{url_for('static',filename='css/admin.css')}}">
-    <link rel="stylesheet" href="../static/css/admin.css">
 </head>
 
 <body>
@@ -17,35 +16,43 @@
                     <h1>NEEV</h1>
 
                     <h2>Welcome <span>ADMIN</span></h2>
-                    <p>Manage your inventory directly from here</p>
-                    <h3>Manage Accounts</h3>
-                    <h3>View Products</h3>
-                    <h3>Manage Products</h3>
-                    <div class="manage">
-                        <h4>Add Product</h4>
-                        <h4>Delete Product</h4>
-                        <h4>Update Product</h4>
+                    <p>Manage your inventry directly from here</p>
+                    <a href="#">Manage Accounts</a><br><br><br>
+                    <a href="#">View Products</a><br><br><br>
+                    <hr width="200px " style="margin-left:130px"><br><br>
+                    <div class=" manage ">
+                        <a href="# ">Add Product<a><br><br>
+                        <a href="/Product_del" >Delete Product</a><br><br>
+                        <a href="# ">Update Product</a><br><br>
                     </div>
-                    <div class="logout">
-                        <button id="logout_btn" name="btn">Logout</button>
+                    <div class="logout ">
+                        <button>Logout</button>
                     </div>
                 </div>
             </div>
-            <form action="/admin" method="POST">
-                <div class="right">
-                    <h2>Add Product</h2>
-                    <input type="text" name="p_id" class="field" id="p_id" placeholder="Product Id">
-                    <input type="text" name="p_name" class="field" id="p_name" placeholder="Product name">
-                    <input type="text" name="p_type" class="field" id="p_type" placeholder="Category">
-                    <input type="text" name="p_image" class="field" id="p_image" placeholder="Product image">
-                    <input type="text" name="p_quantity" class="field" id="p_quantity" placeholder="Product quantity">
-                    <input type="text" name="p_amount" class="field" id="p_amt" placeholder="Product amount">
-                    <input type="text" name="email" class="field" placeholder="Your Email">
-                    <input type="text" name="contact" class="field" placeholder="Phone">
-                    <textarea placeholder="Description" class="field" name="p_desc"></textarea>
-                    <button class="btn">ADD</button>
-                </div>
-            </form>
+            <div class="right ">
+                <h2>Add Product</h2>
+                <input type="text " name="p_id" class="field " id="p_id " placeholder="Product ID ">
+                <input type="text " name="p_name" class="field " id="p_name " placeholder="Product name ">
+                <input type="text " name="p_image" class="field " id="p_image " placeholder="Product image ">
+                <input type="text " name="p_quantity" class="field " id="p_quantity " placeholder="Product quantity ">
+                <!-- <input type="text " class="field " id="p_type " placeholder="Category "> -->
+                <select class="field " name="p_type" id="category " placeholder="category ">
+                    <option value="Category ">Category</option>
+                    <option value="1 ">Home Decor</option>
+                    <option value="2 ">Clothing</option>
+                    <option value="3 ">Jwellery</option>
+                    <option value="4 ">Footwear</option>
+                    <option value="5 ">Toys</option>
+                    <option value="6 ">Accessories</option>
+                    <option value="7 ">Others</option>
+                </select>
+                <input type="text " name="p_amount" class="field " id="p_amt " placeholder="Product amount ">
+                <input type="text " name="p_email" class="field " placeholder="Your Email ">
+                <input type="text " name="p_contact" class="field " placeholder="Phone ">
+                <textarea placeholder="Description " name="p_desc" class="field "></textarea>
+                <button class="btn ">ADD</button>
+            </div>
         </div>
     </div>
     <!-- <script>
