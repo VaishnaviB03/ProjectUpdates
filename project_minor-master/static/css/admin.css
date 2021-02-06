@@ -44,7 +44,7 @@ body {
 }
 
 .content h2 {
-    margin-top: 20px;
+    margin-top: 5px;
     color: rgba(0, 0, 0, 0.603);
 }
 
@@ -52,18 +52,19 @@ body {
     color: rgba(0, 0, 0, 0.603);
     margin-top: 0px;
     margin-bottom: 60px;
+    font-size: 20px;
 }
 
 .content a {
     width: 400px;
     height: 50px;
     /* background: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516); */
-    margin-top: 40px;
+    margin-top: 10px;
     list-style: none;
     margin-bottom: 20px;
     text-decoration: none;
     font-size: 20px;
-    color: rgba(58, 58, 58, 0.692);
+    color: black;
 }
 
 .content a:hover {
@@ -120,6 +121,7 @@ h2 {
 h2:after {
     content: '';
     position: absolute;
+    top: 35px;
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
@@ -135,16 +137,17 @@ h2:after {
     margin-top: 50px;
 }
 
-.logout button {
+.logout>a {
     padding: 0 20px;
     border: none;
     font-size: 20px;
-    background: #1e272e;
+    /* background: #1e272e; */
     color: #fff;
 }
 
 .logout button:hover {
-    background: #000;
+    /* background: #000; */
+    color: #fff;
     transition: 0.5s;
     cursor: pointer;
 }

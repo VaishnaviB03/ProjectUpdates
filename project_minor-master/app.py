@@ -1,14 +1,24 @@
-from flask import Flask, render_template,session, redirect, request, flash
+from flask import Flask, render_template,session, redirect, request
 from sqlalchemy import create_engine 
 from sqlalchemy.orm import scoped_session, sessionmaker
 from flask_sqlalchemy import SQLAlchemy
 from db import db1,db
 import models
-from models import Login
+# import json
+
+# with open('templates/config.json', 'r') as c:
+    # params = json.load(c)["params"]
+
+# local_server = True
+# from models import Login
 
 app = Flask(__name__)
 app.secret_key = 'hello'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=True
+# if local_server:
+# # app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=True
+#     app.config['SQLALCHEMY_DATABASE_URI'] = params['local_uri']
+# else:
+#     app.config['SQLALCHEMY_DATABASE_URI'] = params['prod_uri']
 
 @app.route('/', methods = ['GET' , 'POST'])
 def Contact():
@@ -18,15 +28,10 @@ def Contact():
         cmessage = request.form.get('mssg')
         db.execute("""insert into contacts(name,email,message) VALUES('{}', '{}','{}')""".format(cname,cemail_id,cmessage))
         db.commit()
-        print("mssg stored!")   
+        # print("mssg stored!")   
         return render_template('index.html')
 
-    
-
-    # if login==True:
-    #     return render_template('home.html')
-    # else:
-    print("if condition is not executed btn")
+    # print("if condition is not executed btn")
     return render_template('index.html')
 
 @app.route('/signup', methods = ['GET','POST'])
@@ -38,9 +43,6 @@ def Signup():
         contact = request.form.get('contact')
         password = request.form.get('password')
         confirmpassword = request.form.get('confirmpassword')
-
-        # if Name == '' or Email == '' or Contact == '' or Password == '' or ConfirmPass == '':
-            # print('Wrong entries')
 
         db.execute("""INSERT INTO signup(id,name,email_id,contact,password,confirmpassword) VALUES(NULL,'{}', '{}','{}','{}','{}')""".format(name,email_id,contact,password,confirmpassword))
         # db.execute('INSERT INTO signup(Name,Email,Contact,Password,ConfirmPass) VALUES(:Name, :Email, :Contact, :Password, :ConfirmPass)',{'Name':Name,'Email':Email,'Contact':Contact,'Password':Password,'ConfirmPass':ConfirmPass})
@@ -78,14 +80,7 @@ def Store():
         data= db.execute('SELECT * FROM categories')
         # print(data.fetchall()[0][1])
        
-        categories=data.fetchall()
-       
-        #[(1,name,data),(1,name,data),(1,name,data)]
-        #   0 1   2      0  1   2
-        #   0               1               2
-        #fetchall[(),(),()]
-        #fetchall()[0][1]
-        
+        categories=data.fetchall()        
         
         return render_template('products.html',categories=categories)
   
@@ -94,6 +89,40 @@ def Cart():
     data = db.execute('SELECT * from categories')
     categories = data.fetchall()
     return render_template('cart.html',categories=categories)
+
+@app.route('/adminlog', methods=['GET','POST'])
+def adminlog():
+    # if ('user' in session and session['user'] == params['admin_user']):
+    #     return render_template('admin.html', params=params)
+    # if request.method == 'POST':
+    #     session.pop(username,None)
+
+    if request.method == 'POST':
+        request.form['password'] == 'password'
+        session['username'] == request.form['username']
+        return redirect(url_for('admin.html'))
+
+    return render_template('adminlog.html')
+
+
+
+
+    # if request.method == 'POST':
+    #     username = request.form.get('uname')
+    #     userpass = request.form.get('pass')
+    #     if (username == params['admin_user'] and userpass == params["admin_password"]):
+    #         session['user'] = username
+    #         # return "logged in"
+    #         return render_template('admin.html', params=params)
+            
+    # return render_template('adminlog.html', params = params)
+
+
+
+@app.route("/logout")
+def logout():
+    session.pop('user')
+    return redirect('/adminlog')
 
 @app.route('/admin', methods= ['GET','POST'])
 def admin():
@@ -114,18 +143,68 @@ def admin():
         return render_template('admin.html')
     return render_template('admin.html')
 
-@app.route('/Product_del' ,methods=['GET','POST'])
+@app.route('/Prod_del' ,methods=['GET','POST'])
 def delete():
-    if request.method == 'POST':
-        if p_id in admin:
-            db.execute("""DELETE FROM admin where p_id ='{}' """)
-        else:
-            print('Incorrect Product ID')
-        return render_template('Product_del.html')    
-    return render_template('Product_del.html')
+    data = db.execute('SELECT * from categories')
+    categories = data.fetchall()
+    return render_template('Product_del.html',categories=categories)
+
+
+
+@app.route('/delete/<int:pid>' ,methods=['GET','POST'])
+def dele(pid):
+    global categories
+    i = 0
+    deleted = False
+
+    for products in categories:
+        if products['id'] == id:
+            categories.pop(i)
+            deleted = True
+
+        i += 1
+
+    if deleted:
+        return redirect('Product_del.html')
+
+    return redirect('Product_del.html')
+
+    
+
+
+
+
+    # post = Categories.query.fetchall(p_id=pid).first()
+    # db.session.delete(post)
+    # db.session.commit()    
+    # return "DELETED"
+
+   
+    
+
+        # dlt =  Categories.query.filter_by().all()
+        
+        # return render_template('Product_del.html',row = dlt)
+
+        # prdct = request.form      
+        # pd = prdct['p_id']
+        # db.execute("delete from categories where p_id='"+p_id+"'") 
+        # db.commit()  
+        # admin = session.query(Admin).filter(Admin.p_name=='abx').first()
+        # session.delete(admin)
+        # session.commit()
+        
+    #     if p_id in admin:
+    #         db.execute("DELETE FROM admin WHERE p_id = 100 ")
+    #         db.commit() 
+    #     else:
+    #         print('Incorrect Product ID')
+    #     return render_template('Product_del.html')    
+    # return render_template('Product_del.html')
 
 
 
 if __name__ == '__main__':
+    # db.init_app(app)
     app.run(debug = True)
-    db1.init_app(app)
+    db.init_app(app)

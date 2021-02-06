@@ -33,8 +33,37 @@
             </div>
             <div class="right ">
                 <h2>Delete Product</h2>
-                <input type="text" name="p_id" class="field" id="p-id" placeholder="Product ID">
-                <button class="btn">Delete</button>
+                <div class="tbl">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product ID</th><br><br>
+                                <th>Product Name</th><br> <br>
+                                <th>Product Image</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {%for row in categories%}
+                            <tr>
+                                <td>{{ row.p_id }}</td>
+                                <td>{{ row.p_name }}</td>
+                                <td>{{ row.p_image }}</td>
+
+                                <td>
+                                    <form action="/delete/{{row.p_id}}" method="POST">
+                                        <input style="margin-left: 25px;" type="submit" value="Delete" />
+                                    </form>
+                                </td>
+                            </tr>
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                </div>
+                <!-- <h2>Delete Product</h2> -->
+                <!-- <form action="{{url_for('delete', p_id = p_id)}}">
+                    <input type="text" name="p_id" class="field" id="p-id" placeholder="Product ID">
+                    <button class="btn">Delete</button>
+                </form> -->
             </div>
         </div>
     </div>
